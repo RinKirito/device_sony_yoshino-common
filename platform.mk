@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Platform path
-PLATFORM_COMMON_PATH := device/sony/yoshino
+PLATFORM_COMMON_PATH := device/sony/yoshino-common
 
 $(call inherit-product, device/sony/common/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -168,7 +168,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #WiFi MAC address path
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.wifi.addr_path=/data/vendor/wifi/wlan_mac.bin
-
-# setup dm-verity configs.
-PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc/1da4000.ufshc/by-name/system
-$(call inherit-product, build/target/product/verity.mk)
